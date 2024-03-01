@@ -1,5 +1,6 @@
-# turtlebot3_navigation
+# turtlebot3_obstacle_avoidance
 
+This simulation is based on [turtlebot3 website](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/).
 
 ## Requirement 
 ### 1. If gazebo-ros and gazebo-plugins have not been installed, please install it.
