@@ -1,0 +1,9 @@
+<launch>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch">
+    </include>
+    
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_gazebo_rviz.launch">
+    </include>
+
+</launch>
