@@ -5,7 +5,7 @@ This simulation is based on [turtlebot3 website](https://emanual.robotis.com/doc
 ## Requirement 
 ### 1. If gazebo-ros and gazebo-plugins have not been installed, please install it.
 ```bash
-sudo apt-get install ros-noetic-gazebo-ros ros-noetic-gazebo-plugins ros-noetic-move-base-*
+sudo apt-get install ros-noetic-gazebo-ros ros-noetic-gazebo-plugins ros-noetic-move-base-* ros-noetic-actionlib-* ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control ros-noetic-dwa-local-planner
 ```
 
 ### 2. Clone Turtlebot3 Dependencies
