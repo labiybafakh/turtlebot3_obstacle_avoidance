@@ -5,6 +5,7 @@
 #include "move_base_msgs/MoveBaseAction.h"
 #include "move_base_msgs/MoveBaseGoal.h"
 #include "actionlib/client/simple_action_client.h"
+#include <nav_msgs/OccupancyGrid.h>
 #include <tf/transform_broadcaster.h>
 #include <iostream>
 
@@ -22,6 +23,8 @@ protected:
     move_base_client client;
     bool run_flag;
     pose_data robot_pose;
+    nav_msgs::OccupancyGrid current_map;
+    ros::Subscriber map_sub;
 
 public:
     ObstacleAvoidance(ros::NodeHandle& nh);
@@ -30,7 +33,7 @@ public:
     bool isPositionReachable(pose_data goal_pose);
     pose_data randomPosition();
     void keepMoving();
-
+    void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr& msg);
 };
 
 #endif

@@ -12,13 +12,16 @@ int main(int argc, char** argv){
 
     ros::Rate rate(20);
 
-    //checking whether the initial_pose has activated or not.
+    //Check whether the initial_pose has activated or not.
     while(pose_publisher.getNumSubscribers() < 1){
         ROS_INFO("Waiting intialpose subscriber....");
         rate.sleep();
     }
 
     for(int i=0; i<2; i++){
+        /*
+            Publish initialpose to adjust the tf of map into the correct position.
+        */
         geometry_msgs::PoseWithCovarianceStamped initial_pose;
 
         initial_pose.header.frame_id        = "map";

@@ -1,6 +1,6 @@
-image: /home/toys/qibitech_ws/src/turtlebot3_obstacle_avoidance/obstacle_avoidance/maps/map.pgm
+image: /home/toys/noetic_ws/src/turtlebot3_obstacle_avoidance/obstacle_avoidance/maps/map.pgm
 resolution: 0.050000
-origin: [-2.886703, -2.579329, 0.000000]
+origin: [-2.926674, -2.582653, 0.000000]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196
