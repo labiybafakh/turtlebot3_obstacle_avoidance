@@ -63,7 +63,7 @@ export TURTLEBOT3_MODEL=burger
 source devel/setup.bash
 roslaunch obstacle_avoidance simulation.launch
 ```
-![Navigate with rviz](assets/nav-rviz.mp4)
+https://github.com/labiybafakh/turtlebot3_obstacle_avoidance/assets/16336991/f77f1c1a-8961-4169-a508-8bca80552e4a
 
 #### 2. Run the node to publish random position and keep moving.
 It should be run in different terminal.
@@ -72,4 +72,8 @@ export TURTLEBOT3_MODEL=burger
 source devel/setup.bash
 rosrun obstacle_avoidance obastacle_avoidance
 ```
-![Free moving and random goal](assets/obstalce-avoidance-with-free-move.mp4)
+https://github.com/labiybafakh/turtlebot3_obstacle_avoidance/assets/16336991/936ef258-6614-4399-bc51-da9030d0500e
+
+
+
+
