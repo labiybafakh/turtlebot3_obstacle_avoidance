@@ -56,12 +56,25 @@ add_executable(${PROJECT_NAME}
   src/main.cpp
   src/obstacle_avoidance.cpp
 )
+
+add_executable(init_pose
+  src/initial_pose.cpp
+)
 add_dependencies(${PROJECT_NAME} 
   ${${PROJECT_NAME}_EXPORTED_TARGETS} 
   ${catkin_EXPORTED_TARGETS}
 )
 
+add_dependencies(init_pose
+  ${init_pose_EXPORTED_TARGETS} 
+  ${catkin_EXPORTED_TARGETS}
+)
+
 target_link_libraries(${PROJECT_NAME} 
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(init_pose
   ${catkin_LIBRARIES}
 )
 
@@ -70,6 +83,10 @@ target_link_libraries(${PROJECT_NAME}
 #############
 
 install(TARGETS ${PROJECT_NAME}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(TARGETS init_pose
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
