@@ -18,7 +18,7 @@ int main(int argc, char** argv){
         rate.sleep();
     }
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<2; i++){
         geometry_msgs::PoseWithCovarianceStamped initial_pose;
 
         initial_pose.header.frame_id        = "map";
@@ -32,7 +32,7 @@ int main(int argc, char** argv){
         initial_pose.pose.pose.orientation.w= 1;
 
         pose_publisher.publish(initial_pose);
-        ROS_INFO("PUBLISHED");
+        ROS_INFO("Map pose has been adjusted.");
 
         ros::spinOnce();
         rate.sleep();

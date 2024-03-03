@@ -7,4 +7,7 @@
         <arg name="map_file" value="$(find obstacle_avoidance)/maps/map.yaml" />
     </include>
 
+    <node name="init_pose" pkg="obstacle_avoidance" type="init_pose" output="screen">
+    </node>
+
 </launch>

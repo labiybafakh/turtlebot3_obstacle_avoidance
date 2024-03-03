@@ -5,7 +5,7 @@ This simulation is based on [turtlebot3 website](https://emanual.robotis.com/doc
 ## Requirement 
 ### 1. If gazebo-ros and gazebo-plugins have not been installed, please install it.
 ```bash
-sudo apt-get install ros-noetic-gazebo-ros ros-noetic-gazebo-plugins ros-noetic-move-base-* ros-noetic-actionlib-* ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control ros-noetic-dwa-local-planner
+sudo apt-get install ros-noetic-gazebo-ros ros-noetic-gazebo-plugins ros-noetic-move-base-* ros-noetic-actionlib-* ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control ros-noetic-dwa-local-planner ros-noetic-slam-karto
 ```
 
 ### 2. Clone Turtlebot3 Dependencies
@@ -18,13 +18,21 @@ sudo apt-get update
 sudo apt-get install python3-vcstool
 ```
 #### 2. Clone repositories.
+##### 1. Clone this repository.
 ```bash
+cd ~
+mkdir -p noetic_ws/src && cd noetic_ws/src
+git clone https://github.com/labiybafakh/turtlebot3_obstacle_avoidance
+```
+##### 2. Get another dependencies for turtlebot3
+```bash
+cd turtlebot3_obstacle_avoidance
 vcs import . < turtlebot3.repos
 ```
-
 ## 3. Build and Run
 ### 1. Build
 ```bash
+cd ~/noetic_ws/
 catkin build
 source devel/setup.bash
 ```

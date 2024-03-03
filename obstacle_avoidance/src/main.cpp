@@ -1,4 +1,5 @@
 #include "obstacle_avoidance.hpp"
+#include <memory>
 
 typedef struct{
     float x,y,z;
@@ -38,16 +39,24 @@ int main(int argc, char** argv) {
     ros::init(argc, argv, "obstacle_avoidance");
     ros::NodeHandle node_handler;
     move_base_client client("move_base", true);
-
+    ros::Rate rate(100);
 
     // ObstacleAvoidance nav_robot(node_handler);
-    
+
+    auto nav_robot = std::make_shared<ObstacleAvoidance>(node_handler);
+
+    // ROS_INFO("Waiting for server..");
+    // client.waitForServer();
+    // ROS_INFO("Server is connected!");
+
 
     while(!ros::isShuttingDown()){
-        
-        client.sendGoal(goalPosition(3,2,0));
-        client.waitForResult();
+
+        nav_robot->keepMoving();
+        // client.sendGoal(goalPosition(0,-0.5,0));
+        // client.waitForResult();
         ros::spinOnce();
+        rate.sleep();
     }
     return 0;
 }
