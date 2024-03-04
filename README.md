@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This simulation is based on [turtlebot3 website](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/). This simulation will keep moving by generating random position and orientation. To avoid unreachable area, a checking method is used. It will check whether the goal position is free or not. This robot will also go to the next step if the robot does not reach the desire position in 30s. It can also prevent the robot to do an undifine behaviour.
+This simulation is based on [turtlebot3 website](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/). This simulation will keep moving by generating random position and orientation. To avoid unreachable area, a checking method is used. It will check whether the goal position is free or not. This robot will also go to the next step if the robot does not reach the desire position in 30s. It can also prevent the robot to do an undefined behavior.
 
 ## Prequisition 
 ### 1. ROS
