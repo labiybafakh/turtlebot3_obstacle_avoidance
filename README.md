@@ -7,9 +7,9 @@ This simulation is based on [turtlebot3 website](https://emanual.robotis.com/doc
 ## Prequisition 
 ### 1. ROS
 1. ros-noetic-dekstop installed.
-2. Install some packages below
+2. Install some packages required below
 ```bash
-sudo apt-get install ros-noetic-gazebo-ros ros-noetic-gazebo-plugins ros-noetic-move-base-* ros-noetic-actionlib-* ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control ros-noetic-dwa-local-planner ros-noetic-slam-karto
+sudo apt-get install ros-noetic-gazebo-ros ros-noetic-gazebo-plugins ros-noetic-move-base-* ros-noetic-actionlib-* ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control ros-noetic-dwa-local-planner ros-noetic-slam-karto ros-noetic-map-server ros-noetic-amcl python3-catkin-tools
 ```
 
 ### 2. Clone repositories.
@@ -37,21 +37,28 @@ vcs import . < turtlebot3.repos
 ### 1. Build
 ```bash
 cd ~/noetic_ws/
-catkin make
+catkin build
 source devel/setup.bash
 ```
 ### 2. Run
 #### 1. Creating Map.
+to create the map using slam-karto, it can be done by run create_map.launch file.
 ```bash
 export TURTLEBOT3_MODEL=burger
 roslaunch obstacle_avoidance creating_map.launch
 ```
-and save it by run another launch file.
+Run turtlebot3_teleop to move the robot by using turtlebot3_teleop_key.launch.
+```bash
+source devel/setup.bash
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+```
+after the whole area has been mapped, teleop can be terminated and save the map by run another launch file.
 ```bash
 source devel/setup.bash
 roslaunch obstacle_avoidance map_saver.launch
 ```
-It also can be also done by changing the path inside the map.yaml file. 
+Another shortcut, it also can be also done by changing the path inside the map.yaml file. 
 ```yaml
 image: /home/toys/noetic_ws/src/turtlebot3_obstacle_avoidance/obstacle_avoidance/maps/map.pgm
 ```
